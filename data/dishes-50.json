@@ -1,0 +1,77 @@
+[
+  {
+    "chineseName": "宫保鸡丁",
+    "englishName": "Kung Pao Chicken",
+    "englishDescription": "A stir-fried chicken dish commonly cooked with peanuts, dried chili, and a savory-sweet sauce.",
+    "commonIngredients": ["chicken", "peanuts", "dried chili", "scallion", "ginger", "garlic"],
+    "commonSeasonings": ["soy sauce", "vinegar", "sugar", "starch", "cooking wine"],
+    "taste": "savory, slightly sweet, spicy, nutty",
+    "spiceLevel": "medium",
+    "commonAllergens": ["peanut", "soy", "gluten"],
+    "questionsToAsk": [
+      "Does this dish contain peanuts, peanut oil, or peanut sauce?",
+      "Does the sauce contain soy sauce, wheat, or cooking wine?"
+    ],
+    "aliases": ["宫爆鸡丁", "招牌宫保鸡丁", "招牌宫爆鸡丁"]
+  },
+  {
+    "chineseName": "清炒时蔬",
+    "englishName": "Stir-fried Seasonal Vegetables",
+    "englishDescription": "A simple stir-fried vegetable dish that may still use animal fat, oyster sauce, or chicken powder depending on the restaurant.",
+    "commonIngredients": ["seasonal vegetables", "garlic"],
+    "commonSeasonings": ["salt", "oil", "oyster sauce", "chicken powder"],
+    "taste": "light, savory",
+    "spiceLevel": "none",
+    "commonAllergens": ["shellfish", "soy"],
+    "questionsToAsk": [
+      "Is this cooked with oyster sauce, lard, or chicken powder?",
+      "Can it be cooked with only vegetable oil and salt?"
+    ],
+    "aliases": ["炒时蔬", "蒜蓉时蔬", "清炒青菜"]
+  },
+  {
+    "chineseName": "鱼香肉丝",
+    "englishName": "Yuxiang Shredded Pork",
+    "englishDescription": "A shredded pork dish with a sweet, sour, and spicy garlic sauce. The name contains fish fragrance but usually does not contain fish.",
+    "commonIngredients": ["pork", "wood ear mushroom", "bamboo shoots", "pickled chili"],
+    "commonSeasonings": ["soy sauce", "vinegar", "sugar", "garlic", "ginger", "cooking wine"],
+    "taste": "sweet, sour, savory, mildly spicy",
+    "spiceLevel": "mild",
+    "commonAllergens": ["pork", "soy", "gluten"],
+    "questionsToAsk": [
+      "Is this dish made with pork?",
+      "Does the sauce contain soy sauce, wheat, or cooking wine?"
+    ],
+    "aliases": ["鱼香肉丝盖饭", "鱼香猪肉丝"]
+  },
+  {
+    "chineseName": "麻婆豆腐",
+    "englishName": "Mapo Tofu",
+    "englishDescription": "A spicy tofu dish often cooked with minced meat, chili bean paste, and Sichuan peppercorn.",
+    "commonIngredients": ["tofu", "minced pork or beef", "scallion"],
+    "commonSeasonings": ["doubanjiang", "soy sauce", "chili oil", "Sichuan peppercorn"],
+    "taste": "spicy, numbing, savory",
+    "spiceLevel": "high",
+    "commonAllergens": ["soy", "gluten", "pork"],
+    "questionsToAsk": [
+      "Is there minced meat or pork in the sauce?",
+      "Can it be made without meat and with mild spice?"
+    ],
+    "aliases": ["麻婆豆腐盖饭", "麻辣豆腐"]
+  },
+  {
+    "chineseName": "西红柿炒鸡蛋",
+    "englishName": "Tomato Scrambled Eggs",
+    "englishDescription": "A common home-style dish made with tomato and scrambled egg.",
+    "commonIngredients": ["tomato", "egg", "scallion"],
+    "commonSeasonings": ["salt", "sugar", "oil"],
+    "taste": "light, savory, slightly sweet and sour",
+    "spiceLevel": "none",
+    "commonAllergens": ["egg"],
+    "questionsToAsk": [
+      "Is this cooked with only tomato and egg?",
+      "Is it cooked separately from seafood or peanut dishes?"
+    ],
+    "aliases": ["番茄炒蛋", "番茄炒鸡蛋", "西红柿鸡蛋"]
+  }
+]

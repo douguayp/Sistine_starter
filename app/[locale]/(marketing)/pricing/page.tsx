@@ -2,9 +2,7 @@ import { Container } from "@/components/container";
 import { Background } from "@/components/background";
 import { Heading } from "@/components/heading";
 import { Subheading } from "@/components/subheading";
-import { Pricing } from "@/components/pricing";
-import { PricingTable } from "./pricing-table";
-import { Companies } from "@/components/companies";
+import { PassPricing } from "@/features/pass/components/pass-pricing";
 import { Metadata } from "next";
 import { getTranslations } from 'next-intl/server';
 import type { Locale } from "@/i18n.config";
@@ -49,9 +47,7 @@ export default async function PricingPage(
             {t('description')}
           </Subheading>
         </div>
-        <Pricing />
-        <PricingTable />
-        <Companies />
+        <PassPricing />
       </Container>
     </div>
   );

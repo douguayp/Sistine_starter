@@ -1,12 +1,12 @@
 {
   "home": {
-    "title": "Sistine AI - 通过 Vibe Coding 将您的 AI SaaS 产品投入生产",
-    "description": "Sistine AI 是一个提供广泛 AI 工具和服务的平台,帮助您掌控业务。生成图像、文本以及启动业务所需的一切。",
+    "title": "Can I Eat This? China - 中文菜单饮食风险助手",
+    "description": "先设置饮食档案，再上传中文菜单照片或扫码点单截图，点餐前检查可能隐藏的原料与饮食风险。",
     "ogImage": "https://ai-saas-template-aceternity.vercel.app/banner.png"
   },
   "pricing": {
-    "title": "定价方案 - Sistine AI SaaS 入门套件",
-    "description": "为您的 AI SaaS 选择完美的方案。此定价模块由 Sistine Starter 构建 - 与 Creem 完全集成,支持订阅支付。",
+    "title": "China Food Pass 定价 - Can I Eat This? China",
+    "description": "选择一次性 China Food Pass，用于菜单照片扫描、扫码点单截图检查和中文服务员确认卡。",
     "ogImage": "https://ai-saas-template-aceternity.vercel.app/banner.png"
   },
   "blog": {

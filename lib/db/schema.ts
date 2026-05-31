@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, boolean, integer, varchar, index } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, boolean, integer, varchar, index, jsonb } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
@@ -198,3 +198,114 @@ export const newsletterSubscription = pgTable("newsletter_subscription", {
   unsubscribedAt: timestamp("unsubscribed_at"),
   updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
 });
+
+export const pass = pgTable(
+  "passes",
+  {
+    id: text("id").primaryKey(),
+    guestId: text("guest_id").notNull(),
+    userId: text("user_id").references(() => user.id, { onDelete: "set null" }),
+    plan: varchar("plan", { length: 32 }).notNull(),
+    status: varchar("status", { length: 32 }).default("active").notNull(),
+    startsAt: timestamp("starts_at").notNull(),
+    expiresAt: timestamp("expires_at").notNull(),
+    totalScanCredits: integer("total_scan_credits").notNull(),
+    usedScanCredits: integer("used_scan_credits").default(0).notNull(),
+    recoveryCodeHash: text("recovery_code_hash").notNull(),
+    provider: varchar("provider", { length: 32 }).default("creem").notNull(),
+    providerCheckoutId: text("provider_checkout_id"),
+    providerPaymentId: text("provider_payment_id"),
+    restoredCount: integer("restored_count").default(0).notNull(),
+    lastRestoredAt: timestamp("last_restored_at"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
+  },
+  table => ({
+    guestIdx: index("passes_guest_id_idx").on(table.guestId),
+    providerPaymentIdx: index("passes_provider_payment_id_idx").on(table.providerPaymentId),
+  }),
+);
+
+export const passDevice = pgTable(
+  "pass_devices",
+  {
+    id: text("id").primaryKey(),
+    passId: text("pass_id").notNull().references(() => pass.id, { onDelete: "cascade" }),
+    deviceIdHash: text("device_id_hash").notNull(),
+    passTokenHash: text("pass_token_hash").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    lastSeenAt: timestamp("last_seen_at").defaultNow().notNull(),
+    revokedAt: timestamp("revoked_at"),
+  },
+  table => ({
+    passIdx: index("pass_devices_pass_id_idx").on(table.passId),
+    deviceIdx: index("pass_devices_device_id_hash_idx").on(table.deviceIdHash),
+  }),
+);
+
+export const guestUsage = pgTable(
+  "guest_usage",
+  {
+    id: text("id").primaryKey(),
+    guestId: text("guest_id").notNull(),
+    deviceIdHash: text("device_id_hash").notNull(),
+    ipHash: text("ip_hash"),
+    userAgent: text("user_agent"),
+    freeScansUsed: integer("free_scans_used").default(0).notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()).notNull(),
+  },
+  table => ({
+    guestIdx: index("guest_usage_guest_id_idx").on(table.guestId),
+    deviceIdx: index("guest_usage_device_id_hash_idx").on(table.deviceIdHash),
+  }),
+);
+
+export const scanResult = pgTable(
+  "scan_results",
+  {
+    id: text("id").primaryKey(),
+    guestId: text("guest_id").notNull(),
+    passId: text("pass_id").references(() => pass.id, { onDelete: "set null" }),
+    dietaryProfile: jsonb("dietary_profile").notNull(),
+    structuredResult: jsonb("structured_result").notNull(),
+    imageCount: integer("image_count").notNull(),
+    detectedDishCount: integer("detected_dish_count").default(0).notNull(),
+    analyzedDishCount: integer("analyzed_dish_count").default(0).notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    expiresAt: timestamp("expires_at"),
+  },
+  table => ({
+    guestIdx: index("scan_results_guest_id_idx").on(table.guestId),
+    passIdx: index("scan_results_pass_id_idx").on(table.passId),
+  }),
+);
+
+export const aiUsageLog = pgTable(
+  "ai_usage_logs",
+  {
+    id: text("id").primaryKey(),
+    scanId: text("scan_id").references(() => scanResult.id, { onDelete: "set null" }),
+    guestId: text("guest_id"),
+    passId: text("pass_id").references(() => pass.id, { onDelete: "set null" }),
+    model: varchar("model", { length: 96 }).notNull(),
+    imageCount: integer("image_count").default(0).notNull(),
+    imageWidths: jsonb("image_widths"),
+    imageHeights: jsonb("image_heights"),
+    imageSizeKbTotal: integer("image_size_kb_total").default(0).notNull(),
+    detectedDishCount: integer("detected_dish_count").default(0).notNull(),
+    analyzedDishCount: integer("analyzed_dish_count").default(0).notNull(),
+    inputTokens: integer("input_tokens").default(0).notNull(),
+    outputTokens: integer("output_tokens").default(0).notNull(),
+    totalTokens: integer("total_tokens").default(0).notNull(),
+    estimatedCostUsd: varchar("estimated_cost_usd", { length: 32 }),
+    success: boolean("success").default(false).notNull(),
+    errorMessage: text("error_message"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  table => ({
+    scanIdx: index("ai_usage_logs_scan_id_idx").on(table.scanId),
+    guestIdx: index("ai_usage_logs_guest_id_idx").on(table.guestId),
+    passIdx: index("ai_usage_logs_pass_id_idx").on(table.passId),
+  }),
+);

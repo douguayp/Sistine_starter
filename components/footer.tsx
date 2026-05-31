@@ -10,16 +10,16 @@ export const Footer = () => {
   
   const links = [
     {
+      name: t('navigation.main.scan'),
+      href: "/scan",
+    },
+    {
       name: t('navigation.main.pricing'),
       href: "/pricing",
     },
     {
-      name: t('navigation.main.blog'),
-      href: "/blog",
-    },
-    {
-      name: t('navigation.main.contact'),
-      href: "/contact",
+      name: t('navigation.main.restore'),
+      href: "/restore",
     },
   ];
   const legal = [
@@ -110,7 +110,7 @@ export const Footer = () => {
         </div>
       </div>
       <p className="text-center text-5xl md:text-9xl lg:text-[18rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-muted to-border inset-x-0">
-        SISTINE
+        CHINA FOOD
       </p>
     </div>
   );

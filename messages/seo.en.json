@@ -1,12 +1,12 @@
 {
   "home": {
-    "title": "Sistine AI - Vibe Code Your AI SaaS to Production",
-    "description": "Sistine AI is a platform that provides a wide range of AI tools and services to help you stay on top of your business. Generate images, text and everything else that you need to get your business off the ground.",
+    "title": "Can I Eat This? China - Chinese Menu Dietary Risk Assistant",
+    "description": "Set a food profile, upload Chinese menu photos or QR ordering screenshots, and check likely hidden ingredients before ordering in China.",
     "ogImage": "https://ai-saas-template-aceternity.vercel.app/banner.png"
   },
   "pricing": {
-    "title": "Pricing - Sistine AI SaaS Starter",
-    "description": "Choose the perfect plan for your AI SaaS. This pricing section is built with Sistine Starter - fully integrated with Creem for recurring payments.",
+    "title": "China Food Pass Pricing - Can I Eat This? China",
+    "description": "Choose a one-time China Food Pass for menu photo scans, QR ordering screenshot checks, and Chinese Ask Staff cards.",
     "ogImage": "https://ai-saas-template-aceternity.vercel.app/banner.png"
   },
   "blog": {

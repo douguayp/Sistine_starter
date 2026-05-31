@@ -1,9 +1,9 @@
 {
   "common": {
     "brand": {
-      "name": "SISTINE",
-      "tagline": "Sistine AI & Sistine Labs",
-      "copyright": "版权所有 © 2025 Sistine AI & Sistine Labs",
+      "name": "Can I Eat This? China",
+      "tagline": "中文菜单饮食风险助手",
+      "copyright": "版权所有 © 2026 Can I Eat This? China",
       "allRightsReserved": "保留所有权利"
     },
     "actions": {
@@ -37,6 +37,8 @@
   "navigation": {
     "main": {
       "pricing": "定价",
+      "scan": "扫描菜单",
+      "restore": "恢复 Pass",
       "blog": "博客",
       "contact": "联系我们",
       "docs": "文档",
@@ -64,12 +66,12 @@
     }
   },
   "hero": {
-    "badge": "⚡ 专为 Vibe Coding 打造的首款入门套件",
-    "title": "通过 Vibe Coding 将您的 AI SaaS 产品投入生产",
-    "description": "不懂编程？没问题。Sistine 加上 AI 编程助手，让您的 SaaS 创意在数小时内上线。您只需描述您的想法，即可交付用户真正喜爱的产品。",
+    "badge": "中文菜单饮食风险助手",
+    "title": "Can I Eat This? China",
+    "description": "先设置饮食档案，再上传中文菜单照片或扫码点单截图，点餐前检查可能隐藏的原料与饮食风险。",
     "cta": {
-      "primary": "查看文档",
-      "secondary": "获取代码"
+      "primary": "开始扫描",
+      "secondary": "查看 Pass"
     },
     "modal": {
       "eyebrow": "源码获取",
@@ -82,31 +84,31 @@
     }
   },
   "features": {
-    "title": "Vibe Coding 成功所需的一切功能",
-    "subtitle": "告别在样板代码上浪费时间。专注于描述您的独特功能，Sistine 会为您处理好底层基础。借助 AI 加速产品交付。",
+    "title": "为餐厅点餐决策而设计，不是完整菜单翻译器",
+    "subtitle": "MVP 流程聚焦饮食风险、快速确认和谨慎措辞，帮助旅行者更快做决定。",
     "items": {
       "aiOptimized": {
-        "title": "为 AI 辅助开发而生",
-        "description": "为 Cursor、Windsurf 和 Claude Code 等工具完美结构化。每个文件、每个组件都经过优化，便于 AI 理解和修改。"
+        "title": "先设置 Food Profile",
+        "description": "所有检查都从过敏、不吃猪肉、清真偏好、纯素、无麸质、辣度和旅行场景饮食限制开始。"
       },
       "zeroPipeline": {
-        "title": "从零到生产的完整流程",
-        "description": "身份验证、支付、数据库、部署——一切均已配置完毕。只需向您的 AI 助手发出指令，即可见证您的 SaaS 产品诞生。"
+        "title": "支持菜单照片和扫码点单截图",
+        "description": "可上传纸质菜单、墙上菜单、微信、支付宝、H5 点单页、长截图或单个菜品页截图。"
       },
       "nonTechnical": {
-        "title": "对非技术背景的创始人友好",
-        "description": "分不清 React 和 Rails？没关系。只要您能清晰地描述您的想法，就能成功交付一款 SaaS 产品。"
+        "title": "Better / Ask / Avoid / Unknown",
+        "description": "结果按点餐决策分组，并使用谨慎措辞，不做绝对食品安全承诺。"
       },
       "productionGrade": {
-        "title": "从第一天起即达生产级别",
-        "description": "支持真实用户、真实支付、真实规模。基于 Next.js、PostgreSQL 和 Creem 构建——与价值数十亿美元公司使用的技术栈一致。"
+        "title": "中文 Ask Staff 确认卡",
+        "description": "需要时生成中文确认卡，让服务员用结构化按钮回答。"
       }
     }
   },
   "pricing": {
-    "title": "定价方案",
-    "subtitle": "简单透明的定价，随您的业务一同扩展",
-    "description": "在真实可购买的订阅方案和一次性点数补充包之间选择。这个页面上的价格直接来自结账使用的账单配置。",
+    "title": "选择你的 China Food Pass",
+    "subtitle": "适合中国旅行的一次性 Pass",
+    "description": "上传中文菜单照片或扫码点单截图，检查隐藏原料和饮食风险，并在餐厅向服务员展示中文确认卡。",
     "billing": {
       "monthly": "按月计费",
       "yearly": "按年计费"
@@ -299,9 +301,9 @@
     }
   },
   "cta": {
-    "title": "准备好交付您的 AI SaaS 产品了吗？",
-    "description": "加入数百名开发者的行列，他们已经通过 Sistine 和 Vibe Coding 成功发布了自己的 SaaS 产品。",
-    "button": "获取代码"
+    "title": "准备检查中文菜单了吗？",
+    "description": "先设置 Food Profile，然后最多上传 3 张菜单照片或扫码点单截图。",
+    "button": "开始扫描"
   },
   "auth": {
     "login": {

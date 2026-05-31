@@ -1,9 +1,9 @@
 {
   "common": {
     "brand": {
-      "name": "SISTINE",
-      "tagline": "Sistine AI & Sistine Labs",
-      "copyright": "Copyright © 2025 Sistine AI & Sistine Labs",
+      "name": "Can I Eat This? China",
+      "tagline": "Chinese menu dietary risk assistant",
+      "copyright": "Copyright © 2026 Can I Eat This? China",
       "allRightsReserved": "All rights reserved"
     },
     "actions": {
@@ -37,6 +37,8 @@
   "navigation": {
     "main": {
       "pricing": "Pricing",
+      "scan": "Scan",
+      "restore": "Restore Pass",
       "blog": "Blog",
       "contact": "Contact",
       "docs": "Docs",
@@ -64,12 +66,12 @@
     }
   },
   "hero": {
-    "badge": "⚡ The First Starter Built for Vibe Coding",
-    "title": "Vibe Code Your AI SaaS to Production",
-    "description": "No coding skills? Perfect. Sistine + AI coding assistants = Your SaaS idea live in hours. Just describe what you want. Ship what users love.",
+    "badge": "Chinese menu dietary risk assistant",
+    "title": "Can I Eat This? China",
+    "description": "Set a food profile, upload Chinese menu photos or QR ordering screenshots, and check likely hidden ingredients before ordering.",
     "cta": {
-      "primary": "View Docs",
-      "secondary": "Get Code"
+      "primary": "Start a Scan",
+      "secondary": "View Passes"
     },
     "modal": {
       "eyebrow": "Code Access",
@@ -82,31 +84,31 @@
     }
   },
   "features": {
-    "title": "Everything You Need for Vibe Coding Success",
-    "subtitle": "Stop wasting time on boilerplate. Focus on describing your unique features while Sistine handles the foundation. Ship faster with AI.",
+    "title": "Built for restaurant decisions, not full menu translation",
+    "subtitle": "The MVP flow keeps travelers focused on dietary risk, quick confirmation, and cautious wording.",
     "items": {
       "aiOptimized": {
-        "title": "Built for AI-Assisted Development",
-        "description": "Perfectly structured for Cursor, Windsurf, and Claude Code. Every file, every component optimized for AI understanding and modification."
+        "title": "Food Profile First",
+        "description": "All checks start with allergies, no-pork, halal preference, vegan, gluten-free, spice, and other travel-specific needs."
       },
       "zeroPipeline": {
-        "title": "Zero to Production Pipeline",
-        "description": "Authentication, payments, database, deployment - all configured. Just prompt your AI assistant and watch your SaaS come to life."
+        "title": "Menu Photos and QR Screenshots",
+        "description": "Upload paper menus, wall menus, WeChat, Alipay, H5 ordering pages, long screenshots, or dish-page screenshots."
       },
       "nonTechnical": {
-        "title": "Non-Technical Founder Friendly",
-        "description": "Don't know React from Rails? Doesn't matter. If you can describe your idea clearly, you can ship a SaaS product."
+        "title": "Better / Ask / Avoid / Unknown",
+        "description": "Results are grouped for ordering decisions and use cautious language instead of absolute food safety claims."
       },
       "productionGrade": {
-        "title": "Production-Grade from Day One",
-        "description": "Real users, real payments, real scale. Built on Next.js, PostgreSQL, and Creem - the same stack powering billion-dollar companies."
+        "title": "Chinese Ask Staff Cards",
+        "description": "When needed, generate a Chinese confirmation card so restaurant staff can answer with structured buttons."
       }
     }
   },
   "pricing": {
-    "title": "Pricing Plans",
-    "subtitle": "Simple, transparent pricing that scales with your business",
-    "description": "Choose between live recurring subscriptions and a one-time credit top-up. Every price on this page is driven directly from the billing config used at checkout.",
+    "title": "Choose your China Food Pass",
+    "subtitle": "One-time passes for travel in China",
+    "description": "Scan Chinese menu photos or QR ordering screenshots, check hidden ingredients, and show Chinese staff cards during your trip.",
     "billing": {
       "monthly": "Monthly",
       "yearly": "Yearly"
@@ -299,9 +301,9 @@
     }
   },
   "cta": {
-    "title": "Ready to Ship Your AI SaaS?",
-    "description": "Join hundreds of developers who launched their SaaS products with Sistine and Vibe Coding.",
-    "button": "Get Code"
+    "title": "Ready to check a Chinese menu?",
+    "description": "Start with your Food Profile, then upload up to 3 menu photos or QR ordering screenshots.",
+    "button": "Start a Scan"
   },
   "auth": {
     "login": {

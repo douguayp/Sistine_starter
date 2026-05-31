@@ -267,3 +267,156 @@ Before wrapping a task, check:
 3. Did you avoid reintroducing external runtime demo assets?
 4. Did you run the right validation commands for the area you touched?
 5. Did you leave generated files and docs in sync with the codebase?
+
+
+---
+
+## Project Override: Can I Eat This? China
+
+This repository is being adapted into **Can I Eat This? China**, a mobile-first Chinese menu dietary risk assistant for foreign travelers in China.
+
+When the original Sistine starter rules conflict with this project SPEC, follow:
+
+- `docs/SPEC_SISTINE.md`
+- `docs/SPEC_SISTINE_CN.md`
+
+The SPEC files are the source of truth for this product.
+
+## Product Positioning
+
+Can I Eat This? China helps users:
+
+- set a Food Profile
+- upload Chinese menu photos or QR ordering screenshots
+- identify hidden ingredients and dietary risks
+- group dishes into Better / Ask / Avoid / Unknown
+- generate Chinese Ask Staff confirmation cards
+
+This product is **not** a full menu translator.
+
+## Core Product Rules
+
+- Guest first.
+- Do not force login for MVP core usage.
+- Better Auth can remain, but login must be optional in MVP.
+- Use Guest + Recovery Code.
+- Use pass-based scan credits for this product.
+- Do not rely on Sistine default user credits as the primary access system for menu scanning.
+- Use one-time Passes only.
+- No subscription.
+- No auto-renewal.
+- No lifetime plan.
+- Do not require Google login.
+- Do not require email verification during the restaurant usage flow.
+
+## Scan Input Rules
+
+- One scan supports up to 3 images.
+- Supported inputs:
+  - paper menu photo
+  - menu book photo
+  - restaurant wall menu photo
+  - WeChat QR ordering screenshot
+  - Alipay QR ordering screenshot
+  - H5 ordering page screenshot
+  - long screenshot
+  - dish page screenshot
+
+The product supports screenshots from QR ordering pages.
+
+The product does **not** directly scan restaurant QR codes, parse restaurant QR codes, or crawl restaurant ordering systems.
+
+## AI Rules
+
+- Use Qwen-VL Flash for menu image triage.
+- Do not use Sistine default Volcano Engine / Doubao AI modules for menu scanning unless explicitly instructed.
+- Add a dedicated Qwen module for this product.
+- Stage 1 must only do menu triage:
+  - extract visible Chinese dish names
+  - deduplicate dishes
+  - classify dishes into Better / Ask / Avoid / Unknown
+  - return one-line reason
+  - return 1–3 risk tags
+- Stage 1 must not generate long dish explanations.
+- Stage 1 must not fully translate the menu.
+- Stage 1 must not generate Ask Staff cards.
+- Stage 2 dish deep analysis should only run when the user taps a dish.
+- Ask Staff cards should only be generated when requested.
+
+## Food Safety Wording Rules
+
+Never say:
+
+- safe to eat
+- allergy-free
+- guaranteed gluten-free
+- this dish is halal
+- this dish is vegan
+- this dish is safe for celiac users
+
+Use cautious wording:
+
+- likely lower risk
+- may contain
+- likely contains
+- ask staff before ordering
+- avoid if severe allergy
+- halal status cannot be guaranteed without restaurant certification
+- cross-contamination may still be possible
+
+Result pages must include the required disclaimer from the SPEC.
+
+## Payment Rules
+
+Use Creem, but adapt it to this product’s one-time Pass model.
+
+Plans:
+
+- 7-Day China Food Pass — $9.90 — 100 scan credits
+- 30-Day China Food Pass — $29.90 — 300 scan credits
+- Annual China Food Pass — $69.90 — 1000 scan credits
+
+Payment success must create a pass, not a subscription.
+
+Payment success must:
+
+- create pass
+- set starts_at and expires_at
+- set total_scan_credits
+- generate recovery_code
+- store recovery_code_hash
+- generate device-specific pass_token
+- store pass_token_hash in pass_devices
+
+Do not require user_id for Pass purchase.
+
+## Database Rules
+
+Implement this product’s tables in the existing Drizzle schema.
+
+Required tables:
+
+- passes
+- pass_devices
+- guest_usage
+- scan_results
+- ai_usage_logs
+
+Optional later:
+
+- scan_credit_ledger
+- dish_knowledge
+- dish_aliases
+
+Do not use Supabase assumptions.
+
+## Development Workflow
+
+- Plan before coding.
+- Do not implement the whole SPEC at once.
+- First output a Sistine adaptation plan.
+- Work in small P0 / P1 / P2 / P3 phases.
+- After each implementation step, list changed files and explain what changed.
+- Do not modify unrelated Sistine modules unless necessary.
+- If modifying user-facing copy, update both English and Chinese locales when relevant.
+- If touching billing, credits, auth, database schema, or webhook logic, treat it as high risk and explain the consistency impact.

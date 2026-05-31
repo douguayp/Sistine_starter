@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import messages from "@/messages/en.json";
 import { Hero } from "@/components/hero";
 
@@ -99,29 +99,12 @@ describe("Hero", () => {
     vi.clearAllMocks();
   });
 
-  it("opens the course-community modal and keeps the link as a new-tab external url", () => {
+  it("points visitors to the scan flow and pass pricing", () => {
     render(<Hero />);
 
-    expect(
-      screen.queryByRole("dialog", {
-        name: "Get the source code from our course community",
-      })
-    ).not.toBeInTheDocument();
-
-    fireEvent.click(screen.getByRole("button", { name: "Get Code" }));
-
-    expect(
-      screen.getByRole("dialog", {
-        name: "Get the source code from our course community",
-      })
-    ).toBeInTheDocument();
-
-    const courseLink = screen.getByRole("link", { name: "Open the course community" });
-    expect(courseLink).toHaveAttribute(
-      "href",
-      "https://scys.com/deepsea/2001/course"
-    );
-    expect(courseLink).toHaveAttribute("target", "_blank");
-    expect(courseLink).toHaveAttribute("rel", "noopener noreferrer");
+    expect(screen.getByRole("heading", { name: "Can I Eat This? China" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Start a Scan" })).toHaveAttribute("href", "/en/scan");
+    expect(screen.getByRole("link", { name: "View Passes" })).toHaveAttribute("href", "/en/pricing");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 });
